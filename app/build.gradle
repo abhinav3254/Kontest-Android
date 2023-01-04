@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.kontests'
+    namespace 'com.example.kontest'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.kontests"
+        applicationId "com.example.kontest"
         minSdk 21
         targetSdk 32
         versionCode 1
@@ -41,7 +41,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
+
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-
 }

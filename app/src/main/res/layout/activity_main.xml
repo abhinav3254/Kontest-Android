@@ -13,105 +13,93 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
             >
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/all_btn"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/all"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="All"
+                android:text="all"
+                android:layout_margin="6dp"
                 />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/CodeForces_btn"
-                android:layout_width="wrap_content"
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/codeforces"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Code Forces"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
+                android:text="codeforces"
                 />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/codeforces_gym"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Code Forces::Gym"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/top_coder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Top Coder"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/at_coder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="At Coder"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/code_chef"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Code Chef"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/cs_academy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CS Academy"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/hacker_rank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HackerRank"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/hacker_earth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HackerEarth"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/kick_start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kick Start"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
-                />
-            <com.google.android.material.button.MaterialButton
+            <Button
+                android:layout_margin="6dp"
                 android:id="@+id/leet_code"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Leet Code"
-                android:textAllCaps="false"
-                android:layout_margin="10dp"
+                android:text="leet_code"
                 />
 
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/kick_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="kick_start"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/hacker_earth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hacker_earth"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/hacker_rank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hacker_rank"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/code_chef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="code_chef"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/at_coder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="at_coder"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/top_coder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="top_coder"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/cs_academy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="cs_academy"
+                />
+            <Button
+                android:layout_margin="6dp"
+                android:id="@+id/codeforces_gym"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="codeforces_gym"
+                />
 
         </LinearLayout>
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recycler_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

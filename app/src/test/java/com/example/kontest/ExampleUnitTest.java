@@ -1,4 +1,4 @@
-package com.example.kontests;
+package com.example.kontest;
 
 import org.junit.Test;
 

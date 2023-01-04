@@ -1,7 +1,4 @@
-package com.example.kontests;
-
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+package com.example.kontest;
 
 public class Pojo {
     public String name;
