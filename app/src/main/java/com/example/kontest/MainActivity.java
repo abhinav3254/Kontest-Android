@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     List<Pojo> list;
     CustomAdapter adapter;
 
+    ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        dialog = new ProgressDialog(MainActivity.this);
+        dialog.setTitle("Loading Data");
+        dialog.show();
 
         binding.all.setOnClickListener(this);
         binding.codeforces.setOnClickListener(this);
@@ -58,11 +65,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         callAPIInterface.getAll(URL).enqueue(new Callback<List<Pojo>>() {
             @Override
             public void onResponse(Call<List<Pojo>> call, Response<List<Pojo>> response) {
+                dialog.dismiss();
                 if (response.body().size()>0) {
                     list = response.body();
                     adapter = new CustomAdapter(MainActivity.this,list);
                     binding.recyclerMain.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                     binding.recyclerMain.setAdapter(adapter);
+                } else {
+                    Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -78,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button = (Button) view;
         String URL = button.getText().toString();
         byDefault(URL);
-        Log.d("URL-->",URL);
+        dialog.setTitle("Loading "+URL);
+        dialog.show();
     }
 }
