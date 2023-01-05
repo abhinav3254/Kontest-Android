@@ -94,6 +94,7 @@
             android:layout_margin="5dp"
             >
             <ImageButton
+                android:id="@+id/shareButton"
                 android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="48dp"

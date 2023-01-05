@@ -17,55 +17,105 @@
             android:orientation="horizontal"
             android:padding="8dp"
             >
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/all"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="all"
                 android:layout_margin="6dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
+                app:cornerRadius="20dp"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/codeforces"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="codeforces"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/leet_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="leet_code"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/kick_start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="kick_start"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/hacker_earth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="hacker_earth"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/hacker_rank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="hacker_rank"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/code_chef"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="code_chef"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
             <Button
                 android:layout_margin="6dp"
@@ -73,35 +123,87 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="at_coder"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/top_coder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="top_coder"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/cs_academy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="cs_academy"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:layout_margin="6dp"
                 android:id="@+id/codeforces_gym"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="codeforces_gym"
+                app:cornerRadius="20dp"
+
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+
                 />
 
         </LinearLayout>
     </HorizontalScrollView>
 
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Data"
+        android:textSize="20sp"
+        android:textColor="#808080"
+        />
+    <ImageView
+        android:id="@+id/empty_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/empty"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:background="#E6E6E6"
         android:id="@+id/recycler_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </LinearLayout>

@@ -68,11 +68,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dialog.dismiss();
                 if (response.body().size()>0) {
                     list = response.body();
+                    binding.emptyImage.setVisibility(View.GONE);
+                    binding.emptyText.setVisibility(View.GONE);
                     adapter = new CustomAdapter(MainActivity.this,list);
                     binding.recyclerMain.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                     binding.recyclerMain.setAdapter(adapter);
                 } else {
                     Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+                    binding.emptyImage.setVisibility(View.VISIBLE);
+                    binding.emptyText.setVisibility(View.VISIBLE);
                 }
             }
 
