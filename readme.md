@@ -31,12 +31,17 @@ https://github.com/abhinav3254/Contest-Android
 
 ## snapshots
 
-<img src="./snapshots/one.png" alt="" width="200"> 
-<img src="./snapshots/two.png" alt="" width="200">
-<img src="./snapshots/three.png" alt="" width="200">
-<img src="./snapshots/four.png" alt="" width="200">
-<img src="./snapshots/five.png" alt="" width="200">
-
+<div>
+        <img src="./snapshots/one.png" alt="" width="200"> 
+        <img src="./snapshots/two.png" alt="" width="200">
+    </div>
+    <div>
+        <img src="./snapshots/three.png" alt="" width="200">
+        <img src="./snapshots/four.png" alt="" width="200">
+    </div>
+    <div>
+        <img src="./snapshots/five.png" alt="" width="200">
+    </div>
 
 ## API Reference
 
