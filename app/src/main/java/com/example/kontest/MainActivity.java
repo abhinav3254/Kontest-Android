@@ -1,21 +1,27 @@
 package com.example.kontest;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.kontest.api.APIHandle;
 import com.example.kontest.databinding.ActivityMainBinding;
+import com.example.kontest.extra_stuffs.ExtraThings;
 import com.example.kontest.recycler_view.CustomAdapter;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -94,5 +100,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         byDefault(URL);
         dialog.setTitle("Loading "+URL);
         dialog.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.top_three_dots,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.show_bookmarks :
+                startActivity(new Intent(MainActivity.this,BookMarkActivity.class));
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
