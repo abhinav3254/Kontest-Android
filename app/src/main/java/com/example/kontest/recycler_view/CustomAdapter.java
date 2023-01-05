@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +18,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kontest.Pojo;
 import com.example.kontest.R;
+import com.example.kontest.extra_stuffs.ExtraThings;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.button.MaterialButton;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     private Context context;
     private List<Pojo> list;
+
 
     public CustomAdapter(Context context, List<Pojo> list) {
         this.context = context;
@@ -35,7 +45,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.recycler_layout,parent,false));
         return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.new_layout_recycler_view,parent,false));
     }
 
@@ -43,13 +52,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.name.setText(list.get(position).getName());
-//        holder.url.setText(list.get(position).getUrl());
         holder.start_time.setText(list.get(position).getStart_time().substring(0,10));
         holder.end_time.setText(list.get(position).getEnd_time().substring(0,10));
-//        holder.duration.setText(list.get(position).getDuration());
-//        holder.site.setText(list.get(position).getSite());
-        holder.in_24_hours.setText(list.get(position).getIn_24_hours());
-        holder.status.setText(list.get(position).getStatus());
 
         if ((list.get(position).getUrl()).contains("codeforces")) {
             holder.imageView.setImageResource(R.drawable.codeforces_svgrepo_com);
@@ -73,6 +77,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
             }
         });
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExtraThings.showBottomSheetDialog(context,list,holder.getAdapterPosition());
+            }
+        });
+
     }
 
     @Override
@@ -85,18 +96,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         TextView name,start_time,end_time,in_24_hours,status;
         ImageView imageView;
         CardView cardView;
-        Button register;
+        MaterialButton register;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
-//            url = itemView.findViewById(R.id.url);
             start_time = itemView.findViewById(R.id.start_time);
             end_time = itemView.findViewById(R.id.end_time);
-//            duration = itemView.findViewById(R.id.duration);
-//            site = itemView.findViewById(R.id.site);
-            in_24_hours = itemView.findViewById(R.id.in_24_hours);
-            status = itemView.findViewById(R.id.status);
-            imageView = itemView.findViewById(R.id.image);
+            imageView = itemView.findViewById(R.id.imageView);
             cardView = itemView.findViewById(R.id.cardView);
             register = itemView.findViewById(R.id.register);
 
