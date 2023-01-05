@@ -37,7 +37,10 @@ public class ExtraThings {
         start_time.setText(list.get(position).getStart_time().substring(0,10));
         end_time.setText(list.get(position).getEnd_time().substring(0,10));
         duration.setText((df.format(Double.parseDouble(list.get(position).getDuration())/3600.0))+" hrs");
-        in_24_hours.setText(list.get(position).getIn_24_hours());
+
+        if (list.get(position).getIn_24_hours().equalsIgnoreCase("YES")) {
+            in_24_hours.setText("Within 24 Hours");
+        }
 
         start_time_time.setText(list.get(position).getStart_time().substring(11,16));
         end_time_time.setText(list.get(position).getEnd_time().substring(11,16));
@@ -45,7 +48,6 @@ public class ExtraThings {
         if (list.get(position).getStatus().charAt(0) == 'C') {
             status_img.setImageResource(R.drawable.live);
         }
-
 
         if ((list.get(position).getUrl()).contains("codeforces")) {
             imageView.setImageResource(R.drawable.codeforces_svgrepo_com);
